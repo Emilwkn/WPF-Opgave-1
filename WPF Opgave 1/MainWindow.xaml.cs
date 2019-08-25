@@ -40,5 +40,20 @@ namespace WPF_Opgave_1
         {
             classBIZ.Opgave14(ListBoxRes);
         }
+
+        private void Button_3_Click(object sender, RoutedEventArgs e)
+        {
+            classBIZ.Opgave15(ListBoxRes);
+        }
+
+        private void Button_4_Click(object sender, RoutedEventArgs e)
+        {
+            classBIZ.Opgave16(ListBoxRes);
+        }
+
+        private void Button_5_Click(object sender, RoutedEventArgs e)
+        {
+            classBIZ.Opgave17(ListBoxRes);
+        }
     }
 }
