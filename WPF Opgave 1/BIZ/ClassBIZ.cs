@@ -15,7 +15,7 @@ namespace WPF_Opgave_1
         }
         public void Opgave12(ListBox listBox)
         {
-            listBox.Items.Clear();
+            ClearList(listBox);
 
             int start = 4711;
             while (start < 4736)
@@ -27,9 +27,9 @@ namespace WPF_Opgave_1
         public void Opgave13(ListBox listBox)
         {
             Random random = new Random();
-            listBox.Items.Clear();
+            ClearList(listBox);
 
-            for(int i = 0; i < 25; i++)
+            for (int i = 0; i < 25; i++)
             {
                 int randomTal = random.Next(100000,1000001);
                 listBox.Items.Add(randomTal.ToString());
@@ -40,7 +40,7 @@ namespace WPF_Opgave_1
             Random random = new Random();
             List<int> listInt = new List<int>();
 
-            listBox.Items.Clear();
+            ClearList(listBox);
 
             for (int i = 0; i < 25; i++)
             {
@@ -61,9 +61,9 @@ namespace WPF_Opgave_1
             List<int> listInt1 = new List<int>();
             List<int> listInt2 = new List<int>();
 
-            listBox.Items.Clear();
+            ClearList(listBox);
 
-            for(int i = 0; i < 25; i++)
+            for (int i = 0; i < 25; i++)
             {
                 int randomTal = random.Next(100000, 1000001);
                 listInt1.Add(randomTal);
@@ -84,7 +84,7 @@ namespace WPF_Opgave_1
             Random random = new Random();
             List<int> listInt = new List<int>();
 
-            listBox.Items.Clear();
+            ClearList(listBox);
 
             for (int i = 0; i < 25; i++)
             {
@@ -115,7 +115,7 @@ namespace WPF_Opgave_1
         {
             Random random = new Random();
             List<int> listInt = new List<int>();
-            listBox.Items.Clear();
+            ClearList(listBox);
 
             for (int i = 0; i < 25; i++)
             {
@@ -128,5 +128,42 @@ namespace WPF_Opgave_1
                 listBox.Items.Add($"{tal} - {GetAvarageValue(listInt)} = {tal - GetAvarageValue(listInt)}");
             }
         }
+        public List<string> Opgave18()
+        {
+            Random random = new Random();
+            List<int> listInt = new List<int>();
+            List<string> listRes = new List<string>();
+
+            
+
+            int intAvarage = 0;
+
+            for (int i = 0; i < 25; i++)
+            {
+                int randomTal = random.Next(100000,1000001);
+                listInt.Add(randomTal);
+            }
+
+            intAvarage = GetAvarageValue(listInt);
+
+            listInt.Sort();
+
+            foreach (int tal in listInt)
+            {
+                listRes.Add($"{tal} + {intAvarage} = {tal + intAvarage}");
+            }
+            return listRes;
+        }
+        //Clear ListBox
+        private void ClearList(ListBox listBox)
+        {
+            if (listBox.ItemsSource != null)
+            {
+                listBox.ItemsSource = null;
+            }
+            listBox.Items.Clear();
+        }
+
+
     }
 }
