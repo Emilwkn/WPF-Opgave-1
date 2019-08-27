@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Name="Colum_0" Width="120"/>
-            <ColumnDefinition Name="Colum_1" Width="auto"/>
+            <ColumnDefinition Name="Colum_1" Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -31,11 +31,11 @@
         <Button Name="Button_3" Grid.Row="3" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.5" Click="Button_3_Click"/>
         <Button Name="Button_4" Grid.Row="4" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.6" Click="Button_4_Click"/>
         <Button Name="Button_5" Grid.Row="5" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.7" Click="Button_5_Click"/>
-        <Button Name="Button_6" Grid.Row="6" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.8"/>
-        <Button Name="Button_7" Grid.Row="7" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.9"/>
+        <Button Name="Button_6" Grid.Row="6" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.8" Click="Button_6_Click"/>
+        <Button Name="Button_7" Grid.Row="7" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.9" Click="Button_7_Click"/>
         <Button Name="Button_8" Grid.Row="8" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Opgave 1.10"/>
 
-        <ListBox Name="ListBoxRes" Grid.Column="1" Grid.Row="0" Grid.RowSpan="9" Margin="5.2,5,5,4.6"/>
+        <ListBox Name="ListBoxRes" Grid.Column="1" Grid.Row="0" Grid.RowSpan="9" Margin="5"/>
 
 
     </Grid>

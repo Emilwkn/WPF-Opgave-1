@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace WPF_Opgave_1
 {
@@ -128,13 +129,12 @@ namespace WPF_Opgave_1
                 listBox.Items.Add($"{tal} - {GetAvarageValue(listInt)} = {tal - GetAvarageValue(listInt)}");
             }
         }
-        public List<string> Opgave18()
+        public void Opgave18(ListBox listBox)
         {
             Random random = new Random();
             List<int> listInt = new List<int>();
-            List<string> listRes = new List<string>();
 
-            
+            ClearList(listBox);
 
             int intAvarage = 0;
 
@@ -150,9 +150,8 @@ namespace WPF_Opgave_1
 
             foreach (int tal in listInt)
             {
-                listRes.Add($"{tal} + {intAvarage} = {tal + intAvarage}");
+                listBox.Items.Add($"{tal} + {intAvarage} = {tal + intAvarage}");
             }
-            return listRes;
         }
         //Clear ListBox
         private void ClearList(ListBox listBox)
@@ -163,7 +162,38 @@ namespace WPF_Opgave_1
             }
             listBox.Items.Clear();
         }
+        public void Opgave19(ListBox listBox)
+        {
+            Random random = new Random();
+            List<int> listInt = new List<int>();
+            int intavarage = 0;
 
+            ClearList(listBox);
 
+            for(int i = 0; i < 25; i++)
+            {
+                int randomTal = random.Next(100000,1000001);
+                listInt.Add(randomTal);
+            }
+
+            intavarage = GetAvarageValue(listInt);
+
+            listInt.Sort();
+
+            foreach (int tal in listInt)
+            {
+                ListBoxItem listBoxItem = new ListBoxItem();
+                if ((tal % 2) != 0)
+                {
+                    listBoxItem.Background = Brushes.AliceBlue;
+                }
+                else
+                {
+                    listBoxItem.Background = Brushes.HotPink;
+                }
+                listBoxItem.Content = $"{tal} - {intavarage} = {tal - intavarage}";
+                listBox.Items.Add(listBoxItem);
+            }
+        }
     }
 }
